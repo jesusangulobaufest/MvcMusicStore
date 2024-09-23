@@ -1,0 +1,661 @@
+{
+  "info": {
+    "name": "Music Store API",
+    "_postman_id": "12345678-1234-1234-1234-123456789012",
+    "description": "Postman collection for testing the Music Store API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Albums",
+      "item": [
+        {
+          "name": "Get All Albums",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["albums"]
+            }
+          }
+        },
+        {
+          "name": "Get Album by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["albums", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create Album",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"New Album\",\n  \"artistId\": 1,\n  \"genreId\": 1,\n  \"price\": 9.99\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/albums",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["albums"]
+            }
+          }
+        },
+        {
+          "name": "Update Album",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Album\",\n  \"artistId\": 1,\n  \"genreId\": 1,\n  \"price\": 9.99\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/albums/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["albums", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Album",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["albums", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artists",
+      "item": [
+        {
+          "name": "Get All Artists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/artists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["artists"]
+            }
+          }
+        },
+        {
+          "name": "Get Artist by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/artists/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["artists", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create Artist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Artist\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/artists",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["artists"]
+            }
+          }
+        },
+        {
+          "name": "Update Artist",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Artist\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/artists/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["artists", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Artist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/artists/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["artists", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carts",
+      "item": [
+        {
+          "name": "Get All Carts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/carts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["carts"]
+            }
+          }
+        },
+        {
+          "name": "Get Cart by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/carts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["carts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"albumId\": 1,\n  \"count\": 1,\n  \"dateCreated\": \"2023-01-01T00:00:00.000Z\",\n  \"cartId\": \"12345\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/carts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["carts"]
+            }
+          }
+        },
+        {
+          "name": "Update Cart",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"albumId\": 1,\n  \"count\": 2,\n  \"dateCreated\": \"2023-01-01T00:00:00.000Z\",\n  \"cartId\": \"12345\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/carts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["carts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/carts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["carts", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Genres",
+      "item": [
+        {
+          "name": "Get All Genres",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/genres",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["genres"]
+            }
+          }
+        },
+        {
+          "name": "Get Genre by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/genres/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["genres", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create Genre",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Genre\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/genres",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["genres"]
+            }
+          }
+        },
+        {
+          "name": "Update Genre",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Genre\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/genres/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["genres", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Genre",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/genres/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["genres", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "Get Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["orders", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderDate\": \"2023-01-01T00:00:00.000Z\",\n  \"username\": \"user1\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"address\": \"123 Main St\",\n  \"city\": \"Anytown\",\n  \"state\": \"CA\",\n  \"postalCode\": \"12345\",\n  \"country\": \"USA\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"john.doe@example.com\",\n  \"total\": 99.99\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderDate\": \"2023-01-01T00:00:00.000Z\",\n  \"username\": \"user1\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"address\": \"123 Main St\",\n  \"city\": \"Anytown\",\n  \"state\": \"CA\",\n  \"postalCode\": \"12345\",\n  \"country\": \"USA\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"john.doe@example.com\",\n  \"total\": 99.99\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["orders", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["orders", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "OrderDetails",
+      "item": [
+        {
+          "name": "Get All OrderDetails",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/order-details",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order-details"]
+            }
+          }
+        },
+        {
+          "name": "Get OrderDetail by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/order-details/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order-details", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create OrderDetail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": 1,\n  \"albumId\": 1,\n  \"quantity\": 1,\n  \"unitPrice\": 9.99\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/order-details",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order-details"]
+            }
+          }
+        },
+        {
+          "name": "Update OrderDetail",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": 1,\n  \"albumId\": 1,\n  \"quantity\": 2,\n  \"unitPrice\": 9.99\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/order-details/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order-details", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete OrderDetail",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/order-details/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order-details", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ShoppingCarts",
+      "item": [
+        {
+          "name": "Get All ShoppingCarts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shopping-carts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shopping-carts"]
+            }
+          }
+        },
+        {
+          "name": "Get ShoppingCart by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shopping-carts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shopping-carts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create ShoppingCart",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"albumId\": 1,\n  \"count\": 1,\n  \"dateCreated\": \"2023-01-01T00:00:00.000Z\",\n  \"cartId\": \"12345\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/shopping-carts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shopping-carts"]
+            }
+          }
+        },
+        {
+          "name": "Update ShoppingCart",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"albumId\": 1,\n  \"count\": 2,\n  \"dateCreated\": \"2023-01-01T00:00:00.000Z\",\n  \"cartId\": \"12345\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/shopping-carts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shopping-carts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete ShoppingCart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shopping-carts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shopping-carts", ":id"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
