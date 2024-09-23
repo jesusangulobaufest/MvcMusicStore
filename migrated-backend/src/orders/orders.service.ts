@@ -15,7 +15,7 @@ export class OrdersService {
   }
 
   findOne(id: number): Promise<Order> {
-    return this.ordersRepository.findOne(id);
+    return this.ordersRepository.findOne({ where: { id } });
   }
 
   create(order: Order): Promise<Order> {
@@ -24,7 +24,7 @@ export class OrdersService {
 
   async update(id: number, order: Order): Promise<Order> {
     await this.ordersRepository.update(id, order);
-    return this.ordersRepository.findOne(id);
+    return this.ordersRepository.findOne({ where: { id } });
   }
 
   async remove(id: number): Promise<void> {

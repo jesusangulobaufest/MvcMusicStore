@@ -15,7 +15,7 @@ export class GenresService {
   }
 
   findOne(id: number): Promise<Genre> {
-    return this.genresRepository.findOne(id);
+    return this.genresRepository.findOne({ where: { id } });
   }
 
   create(genre: Genre): Promise<Genre> {
@@ -24,7 +24,7 @@ export class GenresService {
 
   async update(id: number, genre: Genre): Promise<Genre> {
     await this.genresRepository.update(id, genre);
-    return this.genresRepository.findOne(id);
+    return this.genresRepository.findOne({ where: { id } });
   }
 
   async remove(id: number): Promise<void> {

@@ -15,7 +15,7 @@ export class ArtistsService {
   }
 
   findOne(id: number): Promise<Artist> {
-    return this.artistsRepository.findOne(id);
+    return this.artistsRepository.findOne({ where: { id } });
   }
 
   create(artist: Artist): Promise<Artist> {
@@ -24,7 +24,7 @@ export class ArtistsService {
 
   async update(id: number, artist: Artist): Promise<Artist> {
     await this.artistsRepository.update(id, artist);
-    return this.artistsRepository.findOne(id);
+    return this.artistsRepository.findOne({ where: { id } });
   }
 
   async remove(id: number): Promise<void> {

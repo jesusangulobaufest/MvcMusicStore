@@ -15,7 +15,7 @@ export class AlbumsService {
   }
 
   findOne(id: number): Promise<Album> {
-    return this.albumsRepository.findOne(id);
+    return this.albumsRepository.findOne({ where: { id } });
   }
 
   create(album: Album): Promise<Album> {
@@ -24,7 +24,7 @@ export class AlbumsService {
 
   async update(id: number, album: Album): Promise<Album> {
     await this.albumsRepository.update(id, album);
-    return this.albumsRepository.findOne(id);
+    return this.albumsRepository.findOne({ where: { id } });
   }
 
   async remove(id: number): Promise<void> {

@@ -15,7 +15,7 @@ export class CartsService {
   }
 
   findOne(id: number): Promise<Cart> {
-    return this.cartsRepository.findOne(id);
+    return this.cartsRepository.findOne({ where: { id } });
   }
 
   create(cart: Cart): Promise<Cart> {
@@ -24,7 +24,7 @@ export class CartsService {
 
   async update(id: number, cart: Cart): Promise<Cart> {
     await this.cartsRepository.update(id, cart);
-    return this.cartsRepository.findOne(id);
+    return this.cartsRepository.findOne({ where: { id } });
   }
 
   async remove(id: number): Promise<void> {
